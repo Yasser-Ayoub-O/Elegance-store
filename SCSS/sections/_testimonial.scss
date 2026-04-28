@@ -1,0 +1,79 @@
+@use "../abstracts/variables";
+
+.testimonial {
+  background: var(--color-grey-light);
+  border-top: 0.125rem solid #d0d0d0;
+  border-bottom: 0.125rem solid #d0d0d0;
+  padding-block: var(--space-3xl);
+  margin-block: var(--space-xl);
+
+  &__inner {
+    width: min(70%, 50rem);
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  &__inner::before,
+  &__inner::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-color: var(--color-grey);
+    border-style: solid;
+    border-width: 0;
+  }
+  &__inner::before {
+    left: -2.5rem;
+    border-bottom-width: 0.3125rem;
+    border-left-width: 0.3125rem;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  &__inner::after {
+    right: -2.5rem;
+    border-top-width: 0.3125rem;
+    border-right-width: 0.3125rem;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &__title {
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    font-weight: 700;
+    margin-bottom: var(--space-xl);
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-grey);
+    margin-bottom: var(--space-xl);
+    font-style: italic;
+  }
+
+  &__user {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: left;
+  }
+
+  &__avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 0.1875rem solid var(--color-red);
+  }
+
+  &__user-name {
+    font-weight: 700;
+    font-size: 0.9375rem;
+  }
+  &__user-role {
+    font-size: 0.8125rem;
+    color: var(--color-grey);
+  }
+}

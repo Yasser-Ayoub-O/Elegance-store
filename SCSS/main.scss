@@ -1,0 +1,13 @@
+@use "./abstracts/variables" as *;
+@use "./base/reset";
+@use "./base/global";
+@use "./layout/header";
+@use "./layout/footer";
+@use "./sections/hero";
+@use "./sections/categories";
+@use "./sections/trending";
+@use "./sections/testimonial";
+@use "./sections/recommendations";
+@use "./sections/news";
+@use "./sections/services";
+@use "./layout/responsive";

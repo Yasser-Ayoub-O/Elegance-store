@@ -1,0 +1,62 @@
+@use "../abstracts/variables";
+
+.features {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: var(--space-xl) var(--space-lg);
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    flex: 0 1 12rem;
+    min-width: 8rem;
+  }
+  &__icon-box {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+  }
+  &__icon {
+    position: absolute;
+    font-size: 3rem;
+    transition:
+      top 0.5s ease,
+      opacity 0.5s ease;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__icon--back {
+    top: 50%;
+    margin-top: -1.5rem;
+    color: var(--color-grey-mid);
+  }
+  &__icon--front {
+    top: 5.625rem;
+    color: var(--color-black);
+    opacity: 0;
+  }
+  &__icon-box:hover .features__icon--back {
+    top: -3.75rem;
+    opacity: 0;
+  }
+  &__icon-box:hover .features__icon--front {
+    top: 50%;
+    margin-top: -1.5rem;
+    opacity: 1;
+  }
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  &__text {
+    font-size: 0.8125rem;
+    color: var(--color-grey);
+  }
+}
