@@ -1,0 +1,179 @@
+@use "../abstracts/variables";
+.trending {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  &__title {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+  }
+
+  &__filter {
+    font-size: 0.9375rem;
+    cursor: pointer;
+    color: var(--color-grey);
+    transition: color var(--transition-fast);
+    position: relative;
+    padding-bottom: 0.125rem;
+  }
+  &__filter::after {
+    content: "";
+    position: absolute;
+    bottom: -0.125rem;
+    left: 0;
+    right: 0;
+    height: 0.125rem;
+    background: var(--color-red);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+  }
+  &__filter:hover {
+    color: var(--color-black);
+  }
+  &__filter--active {
+    color: var(--color-red);
+    font-weight: 600;
+  }
+  &__filter--active::after {
+    transform: scaleX(1);
+  }
+
+  &__divider {
+    width: 100%;
+    height: 0.0625rem;
+    background: #ddd;
+    margin-bottom: var(--space-2xl);
+    position: relative;
+  }
+
+  &__divider-accent {
+    position: absolute;
+    right: 8rem;
+    bottom: 0;
+    width: 4rem;
+    height: 0.3125rem;
+    background: var(--color-red);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  &__card-media {
+    position: relative;
+    height: 21.875rem;
+    overflow: hidden;
+    background: radial-gradient(#89786f, #a2a0a0);
+    perspective: 43.75rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  &__card:hover &__image {
+    transform: scale(1.04);
+  }
+
+  &__flip-face {
+    position: absolute;
+    inset: 0;
+    background-image: url(../images/mens-suit-watch.jpg);
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(90deg);
+    transition: transform 0.8s ease;
+  }
+  &__card:hover &__flip-face {
+    transform: rotateY(0deg);
+  }
+
+  &__actions {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: #faeee0;
+    opacity: 0;
+    transition:
+      opacity 0.5s ease,
+      bottom 0.5s ease;
+    z-index: 2;
+  }
+  &__card:hover &__actions {
+    opacity: 1;
+    bottom: var(--space-xl);
+  }
+
+  &__action-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--color-black);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+  }
+  &__action-btn:hover {
+    background: var(--color-red);
+    color: var(--color-white);
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    transition: color var(--transition-fast);
+  }
+  &__card:hover &__name {
+    color: var(--color-red);
+  }
+
+  &__pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  &__price {
+    font-size: 1rem;
+    color: var(--color-grey);
+    font-weight: 500;
+  }
+  &__price--old {
+    font-size: 0.875rem;
+    color: var(--color-grey-mid);
+    text-decoration: line-through;
+  }
+}

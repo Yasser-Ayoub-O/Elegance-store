@@ -1,0 +1,105 @@
+.hero {
+  &__announcement {
+    width: 100%;
+    background: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 0.4375rem var(--space-md);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+
+    & strong {
+      color: #ff6b4a;
+    }
+
+    &-cta {
+      display: inline;
+      margin-left: var(--space-sm);
+      color: #ff6b4a;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      cursor: pointer;
+      transition: letter-spacing var(--transition-base);
+
+      &:hover {
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: stretch;
+    min-height: calc(100vh - var(--header-h) - 1.875rem);
+    background: var(--color-hero-bg);
+    overflow: hidden;
+  }
+
+  &__data {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-3xl) var(--space-2xl) var(--space-3xl) var(--space-3xl);
+  }
+
+  &__subtitle {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--color-red);
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+  }
+
+  &__title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: var(--space-lg);
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-grey);
+    max-width: 28rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    width: 10rem;
+    height: 3.125rem;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: background var(--transition-base);
+  }
+  &__btn:hover {
+    background: var(--color-red);
+  }
+
+  &__image-wrap {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform var(--transition-slow);
+  }
+
+  &__image-wrap:hover &__image {
+    transform: scale(1.04);
+  }
+}
