@@ -122,6 +122,12 @@
 
   .section-padded {
     width: 95%;
+    &:before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
   }
 
   .trending {
